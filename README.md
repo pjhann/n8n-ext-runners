@@ -1,18 +1,49 @@
+# **N8N WITH EXTERNAL RUNNERS**
 
-# **N8N With External Runners**
-
-This n8n setup includes an **external runner container** for executing Python inside the Code node.  
-**Nginx Proxy Manager (NPM)** is used as a reverse proxy and for managing SSL certificates.
+This N8N is with an external runner container for running Python in the Code node.  
+Nginx‑NPM is to be used in front for reverse proxy and for SSL certificate.
 
 ---
 
 ## **Installation**
 
-### **1) Pull Nginx Proxy Manager**
-Clone or download your `nginx-npm` repository.
+1) Pull Nginx‑NPM from my nginx‑npm repo.
 
----
-
-### **2) Start Nginx Proxy Manager**
+2) Docker Compose Nginx  
 ```bash
 docker compose up -d
+```
+
+> ⚠️ **Warning:**  
+> Ensure you run this command **inside the directory that contains the Nginx‑NPM `docker-compose.yml` file**.  
+> Running it in another folder will either fail or launch the wrong stack.
+
+4) Setup a Proxy Host  
+- Domain  
+- Protocol: **http**  
+- Host: `<Container name>`  
+- Port: **5678**
+
+5) Get a certificate for n8n and bind it to the host.
+
+6) Pull N8N repo.
+
+7) Build runners image  
+```bash
+docker compose build
+```
+
+8) Set up a runners token with OpenSSL  
+```bash
+openssl rand -hex 32
+```
+
+Set it in `.env` as:  
+```
+N8N_RUNNERS_TOKEN=<token>
+```
+
+9) Docker Compose N8N  
+```bash
+docker compose up -d
+```
