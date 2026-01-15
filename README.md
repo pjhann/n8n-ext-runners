@@ -4,8 +4,15 @@ This N8N is with an external runner container for running Python in the Code nod
 Nginx‑NPM is to be used in front for reverse proxy and for SSL certificate.
 
 ---
+## **Prerequisites**
+Docker + docker compose installed
+```bash
+docker network create n8n-network
+```
 
 ## **Installation**
+1) Create n8n-network 
+
 
 1) Pull Nginx‑NPM from my nginx‑npm repo.
 2) setup MariaDB credentials to .env

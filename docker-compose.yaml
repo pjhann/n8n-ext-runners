@@ -48,7 +48,7 @@ services:
       # --- Disable internal Python runner to avoid warnings ---
       N8N_PYTHON_ENABLED: "true"
 
-    ports: 
+    #ports: 
      # - "8091:5678"   # Uncomment to expose n8n directly (not needed with NPM)
     volumes:
       - "n8n_data:/home/node/.n8n"
