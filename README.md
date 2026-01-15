@@ -45,7 +45,7 @@ docker compose build
 openssl rand -hex 32
 ```
 
-Set it in `.env` as:  
+   Set it in `.env` as:  
 ```
 N8N_RUNNERS_TOKEN=<token>
 ```
