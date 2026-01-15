@@ -1,0 +1,9 @@
+FROM docker.n8n.io/n8nio/runners:latest
+
+USER root
+
+# No apk/apt here — the image already contains Python
+# Just create the virtual environment for n8n Python (Native)
+RUN python3 -m venv /opt/n8n-python-venv
+
+USER node
