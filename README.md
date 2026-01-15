@@ -9,7 +9,8 @@ Nginx‑NPM is to be used in front for reverse proxy and for SSL certificate.
 
 1) Pull Nginx‑NPM from my nginx‑npm repo.
 2) setup MariaDB credentials
-Set it in `.env` as:  
+
+   Set it in `.env` as:  
 ```
 MYSQL_ROOT_PASSWSORD=<password>
 MYSQL_PASSWORD=<password>
